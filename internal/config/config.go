@@ -2,47 +2,47 @@ package config
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
-	"log"
 	"os"
 )
 
 type Config struct {
-	DbURL           string `json:"db_url"`
-	CurrentUserName string `json:"current_user_name"`
+    DbURL           string `json:"db_url"`
+    CurrentUserName string `json:"current_user_name"`
 }
 
-
-func Read() Config {
+func Read() (Config, error) {
 	filePath, err := getConfigFilePath()
 	if err != nil {
-		log.Fatal(err)
+		return Config{}, formatError("Error getting the config file path", err)
 	}
 	data, err := os.ReadFile(filePath)
 	if err != nil {
-		log.Fatal(err, "ReadFile failed: ", err)
+		return Config{}, formatError("ReadFile failed: ", err)
 	}
-	var jsonFile Config
-	err = json.Unmarshal(data, &jsonFile)
+	var config Config
+	err = json.Unmarshal(data, &config)
 	if err != nil {
-		log.Fatal(err, "Unmarshal failed: ", err)
+		return Config{}, formatError("Unmarshal failed: ", err)
 	}
-	fmt.Println(jsonFile)
-	return jsonFile
+	fmt.Println(config)
+	return config, nil
 }
 
-func (c Config)SetUser(name string){
+func (c *Config)SetUser(name string) error{
 	c.CurrentUserName = name
-	write(c)
+	err:=write(*c)
+	if err != nil {
+		return formatError("Failed setting user", err)
+	}
+	return nil
 }
 
 func getConfigFilePath() (string, error) {
 	const gatorconfig = "/.gatorconfig.json"
 	dirname, err := os.UserHomeDir()
 	if err != nil {
-		newErr := fmt.Sprint("Failed getting file Path: ", err)
-		return "", errors.New(newErr)
+		return "", formatError("Failed getting file Path", err)
 	}
 	return (dirname+gatorconfig), nil
 }
