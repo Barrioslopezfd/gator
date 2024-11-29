@@ -2,7 +2,6 @@ package config
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 )
 
@@ -25,7 +24,6 @@ func Read() (Config, error) {
 	if err != nil {
 		return Config{}, formatError("Unmarshal failed: ", err)
 	}
-	fmt.Println(config)
 	return config, nil
 }
 
