@@ -30,8 +30,7 @@ func main(){
 	conf:	&conf,
 	db:	dbQueries,
     }
-    
-    if len(os.Args) < 3 {
+    if (os.Args[1] == "login" || os.Args[1] == "register") && len(os.Args) < 3 {
 	log.Fatal("Not enough Arguments")
     }
     cmd := command {
@@ -45,6 +44,8 @@ func main(){
 
     cmds.register("login", handleLogin)
     cmds.register("register", handleRegister)
+    cmds.register("reset", resetUsers)
+    cmds.register("users", getUsers)
     err=cmds.run(toolState, cmd) 
     if err != nil {
 	log.Fatal(err)
