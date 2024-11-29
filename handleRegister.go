@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"time"
-
 	"github.com/Barrioslopezfd/gator/internal/database"
 	"github.com/google/uuid"
 )
