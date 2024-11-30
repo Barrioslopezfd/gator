@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func getUsers(s *state, _ command) error {
+func handleUsers(s *state, _ command) error {
 	users, err := s.db.GetUsers(context.Background())
 	if err != nil {
 		return err

@@ -10,4 +10,12 @@ VALUES (
 )
 RETURNING *;
 
+-- name: GetAlmostFeed :many
+SELECT feeds.name, feeds.url, users.name
+    FROM feeds
+JOIN users
+ON feeds.user_id = users.id;
 
+-- name: GetFeedByUrl :one
+select * from feeds
+where url = $1;

@@ -31,6 +31,14 @@ func handleAddFeed(s *state, cmd command) error {
 		return err
 	}
 
+	arg := []string{cmd.arguments[1]}
+	newCmd := cmd
+	newCmd.arguments=arg
+	err = handleFollow(s, newCmd)
+	if err != nil {
+		return err
+	}
+
 	fmt.Println(nf.ID)
 	fmt.Println(nf.CreatedAt)
 	fmt.Println(nf.UpdatedAt)

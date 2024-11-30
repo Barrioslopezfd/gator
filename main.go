@@ -44,10 +44,13 @@ func main(){
 
     cmds.register("login", handleLogin)
     cmds.register("register", handleRegister)
-    cmds.register("reset", resetUsers)
-    cmds.register("users", getUsers)
-    cmds.register("agg", agg)
+    cmds.register("reset", handleReset)
+    cmds.register("users", handleUsers)
+    cmds.register("agg", handleAgg)
     cmds.register("addfeed", handleAddFeed)
+    cmds.register("feeds", handleFeeds)
+    cmds.register("follow", handleFollow)
+    cmds.register("following", handleFollowing)
     err=cmds.run(toolState, cmd) 
     if err != nil {
 	log.Fatal(err)

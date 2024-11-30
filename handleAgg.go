@@ -25,7 +25,7 @@ type RSSItem struct {
 	PubDate     string `xml:"pubDate"`
 }
 
-func agg (_ *state, _ command) error {
+func handleAgg (_ *state, _ command) error {
 	feed, err := fetchFeed(context.Background(), "https://www.wagslane.dev/index.xml")
 	if err != nil {
 		return err
