@@ -1,4 +1,3 @@
-
 -- +goose Up
 CREATE TABLE feeds (
     id          uuid        PRIMARY KEY,
@@ -7,7 +6,7 @@ CREATE TABLE feeds (
     name        TEXT        NOT NULL,
     url         TEXT        NOT NULL
                             UNIQUE,
-    user_id     uuid        NOT NULL UNIQUE,
+    user_id     uuid        NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 

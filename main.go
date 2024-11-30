@@ -30,9 +30,6 @@ func main(){
 	conf:	&conf,
 	db:	dbQueries,
     }
-    if (os.Args[1] == "login" || os.Args[1] == "register") && len(os.Args) < 3 {
-	log.Fatal("Not enough Arguments")
-    }
     cmd := command {
 	name:	    os.Args[1],
 	arguments:  os.Args[2:],
@@ -47,10 +44,11 @@ func main(){
     cmds.register("reset", handleReset)
     cmds.register("users", handleUsers)
     cmds.register("agg", handleAgg)
-    cmds.register("addfeed", handleAddFeed)
+    cmds.register("addfeed", middlewareLoggedIn(handleAddFeed))
     cmds.register("feeds", handleFeeds)
-    cmds.register("follow", handleFollow)
-    cmds.register("following", handleFollowing)
+    cmds.register("follow", middlewareLoggedIn(handleFollow))
+    cmds.register("following", middlewareLoggedIn(handleFollowing))
+    cmds.register("unfollow", middlewareLoggedIn(handleUnfollow))
     err=cmds.run(toolState, cmd) 
     if err != nil {
 	log.Fatal(err)

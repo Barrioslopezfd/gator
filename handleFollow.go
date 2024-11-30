@@ -10,11 +10,10 @@ import (
 )
 
 
-func handleFollow(s *state, cmd command) error {
+func handleFollow(s *state, cmd command, currentUser database.User) error {
 	if len(cmd.arguments) > 1 {
 		return fmt.Errorf("Too many arguments. Expected 1, received %d.", len(cmd.arguments))
 	}
-	currentUser, err := s.db.GetUser(context.Background(), s.conf.CurrentUserName)
 	feed, err := s.db.GetFeedByUrl(context.Background(), cmd.arguments[0])
 	if err != nil {
 		return err
