@@ -33,7 +33,7 @@ Make sure to replace username and password with your PostgreSQL credentials.
 
 ### Feed Management
 
-- `gator addfeed <Feed_URL>`: Add a new feed URL.
+- `gator addfeed <username> <Feed_URL>`: Add a new feed URL.
 - `gator feeds`: Show all available feeds.
 - `gator follow <Feed_URL>`: Follow a specific feed as the logged-in user.
 - `gator following`: Display all feeds followed by the logged-in user.
