@@ -76,10 +76,10 @@ func unescapeRSSFeed(feed *RSSFeed){
 	feed.Channel.Link = html.UnescapeString(feed.Channel.Link)
 	feed.Channel.Description = html.UnescapeString(feed.Channel.Description)
 
-	for _, item := range feed.Channel.Item {
-		item.Title = html.UnescapeString(item.Title)
-		item.Link = html.UnescapeString(item.Link)
-		item.Description = html.UnescapeString(item.Description)
-		item.PubDate = html.UnescapeString(item.PubDate)
+	for i := range feed.Channel.Item {
+		feed.Channel.Item[i].Title = html.UnescapeString(feed.Channel.Item[i].Title)
+		feed.Channel.Item[i].Link = html.UnescapeString(feed.Channel.Item[i].Link)
+		feed.Channel.Item[i].Description = html.UnescapeString(feed.Channel.Item[i].Description)
+		feed.Channel.Item[i].PubDate = html.UnescapeString(feed.Channel.Item[i].PubDate)
 	}
 }
