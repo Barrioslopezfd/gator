@@ -30,9 +30,6 @@ func agg (_ *state, _ command) error {
 	if err != nil {
 		return err
 	}
-	if err != nil {
-		return err
-	}
 	fmt.Println(feed.Channel)
 	return nil
 }
