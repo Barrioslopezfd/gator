@@ -26,30 +26,26 @@ Make sure to replace username and password with your PostgreSQL credentials.
 
 ### User Management
 
-    - `gator register <username>`: Register a new user and set them as the logged-in user.
-    - `gator login <username>`: Log in as an existing user.
-    - `gator reset`: Erase all users.
-    - `gator users`: Display all registered users.
+- `gator register <username>`: Register a new user and set them as the logged-in user.
+- `gator login <username>`: Log in as an existing user.
+- `gator reset`: Erase all users.
+- `gator users`: Display all registered users.
 
 ### Feed Management
 
-    - `gator addfeed <Feed_URL>`: Add a new feed URL.
-    - `gator feeds`: Show all available feeds.
-    - `gator follow <Feed_URL>`: Follow a specific feed as the logged-in user.
-    - `gator following`: Display all feeds followed by the logged-in user.
-    - `gator unfollow <Feed_URL>`: Unfollow a specific feed.
+- `gator addfeed <Feed_URL>`: Add a new feed URL.
+- `gator feeds`: Show all available feeds.
+- `gator follow <Feed_URL>`: Follow a specific feed as the logged-in user.
+- `gator following`: Display all feeds followed by the logged-in user.
+- `gator unfollow <Feed_URL>`: Unfollow a specific feed.
 
 ### Post Aggregation
 
-    - `gator agg <Time_between_requests>`
-    Aggregate posts from all added feeds into the database.
-    The format is #s/m/h, where # is a number and s/m/h are
-    seconds, minutes and hours respectively.
-    The program will fail if you dont write the time in this format.
+- `gator agg <Time_between_requests>`: Aggregate posts from all added feeds into the database. The format is #s/m/h, where # is a number and s/m/h are seconds, minutes and hours respectively. The program will fail if you dont write the time in this format.
 
 ### Browsing Posts
 
-    - `gator browse`: Display the content of posts.
+- `gator browse`: Display the content of posts.
 
 ## Example Usage
 ### Registering a User
