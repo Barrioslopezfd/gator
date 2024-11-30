@@ -51,6 +51,6 @@ func scrapeFeeds(s *state) error {
 		}
 		s.db.CreatePost(context.Background(), post)
 	}
-	fmt.Printf("Done")
+	fmt.Println("Done")
 	return nil
 }
