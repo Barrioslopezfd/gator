@@ -46,6 +46,7 @@ func main(){
     cmds.register("register", handleRegister)
     cmds.register("reset", resetUsers)
     cmds.register("users", getUsers)
+    cmds.register("agg", agg)
     err=cmds.run(toolState, cmd) 
     if err != nil {
 	log.Fatal(err)
