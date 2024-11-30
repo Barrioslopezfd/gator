@@ -41,7 +41,9 @@ Make sure to replace username and password with your PostgreSQL credentials.
 
 ### Post Aggregation
 
-- `gator agg <Time_between_requests>`: Aggregate posts from all added feeds into the database. The format is #s/m/h, where # is a number and s/m/h are seconds, minutes and hours respectively. The program will fail if you dont write the time in this format.
+- `gator agg <Time_between_requests>`: Aggregate posts from all added feeds into the database. 
+The format is #s/m/h, where # is a number and s/m/h are seconds, minutes and hours respectively. 
+The program will fail if you dont write the time in this format.
 
 ### Browsing Posts
 
