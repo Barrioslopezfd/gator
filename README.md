@@ -85,5 +85,6 @@ gator agg 1m
 
 # Notes
 
-    - Ensure your PostgreSQL database is set up and accessible via /nthe `db_url` in your configuration file.
+    - Ensure your PostgreSQL database is set up and accessible via /n
+      the `db_url` in your configuration file.
     - Run `gator reset` with caution as it will delete all user data.
