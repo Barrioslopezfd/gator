@@ -6,6 +6,11 @@ To get started, you'll need:
 - [Go](https://go.dev/doc/install)
 - [PostgreSQL](https://www.postgresql.org/download/)
 
+## Install GATOR! 
+```bash
+go install github.com/Barrioslopezfd/gator@latest
+```
+
 Once installed, GATOR allows you to:
 - Fetch posts from feed URLs.
 - Store them in a PostgreSQL database.
@@ -23,6 +28,9 @@ Here’s an example configuration:
 Make sure to replace username and password with your PostgreSQL credentials.
 
 ## Available Commands
+
+### Help! 
+- If you ever need access to this section just tyme `gator help`!
 
 ### User Management
 
