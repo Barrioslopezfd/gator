@@ -88,3 +88,13 @@ gator agg 1m
     - Ensure your PostgreSQL database is set up and accessible via
       the `db_url` in your configuration file.
     - Run `gator reset` with caution as it will delete all user data.
+
+## 🤝 Contributing
+
+### You can clone the repo
+
+```bash
+git clone https://github.com/Barrioslopezfd/gator@latest
+cd gator
+```
+
