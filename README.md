@@ -79,8 +79,9 @@ gator follow https://example.com/feed
 ```bash
 gator agg 1m
 ```
+- m means minutes and the format is number m as you have seen
+- This is the minutes between requests to fetch posts
 
-(Where 1m is the time in minutes between requests to fetch posts.)
 
 
 # Notes
